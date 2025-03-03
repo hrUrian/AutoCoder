@@ -1,5 +1,5 @@
 name: Hello World
-trigger: push
+on: [push]
 
 jobs:
   say_hello:
