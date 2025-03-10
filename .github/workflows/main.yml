@@ -1,4 +1,4 @@
-name: Hello World
+name: Generate code
 on:
   issues:
     types: [opened, reopened]
@@ -13,3 +13,5 @@ jobs:
       - name: Make script file executable
         run: |
           chmod u+x ./scripts/script.sh
+          ./scripts/script.sh ${{ secrets.GITHUB_TOKEN }}
+#      -ISSUE_NUMBER: ${{ github.event.issue.number }}
