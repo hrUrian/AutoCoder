@@ -29,4 +29,4 @@ jobs:
           path: autocoder-artifact
       - name: list artifact
         run: | 
-          ls -R ${{ steps.download-artifact.outputs.download-path }}/../autocoder-artifact/?
+          ls -R ${{ steps.download-artifact.outputs.download-path }}/../autocoder-artifact/
