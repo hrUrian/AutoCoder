@@ -14,3 +14,16 @@ jobs:
         run: |
           chmod u+x ./scripts/script.sh
           ./scripts/script.sh ${{ secrets.GITHUB_TOKEN }} 'hrUrian/AutoCoder' ${{ github.event.issue.number }} ${{ env.OPENAI_API_KEY }}
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: autocoder-artifact
+          path: autocoder-bot
+      - name: Download the autocoder artifact
+        uses: actions/download-artifact@v3
+        id: download-artifact
+        with:
+          name: autocoder-artifact
+      - name: list artifact
+        run: | 
+          ls -R ${{ steps.download-artifact.outputs.download-path }}
