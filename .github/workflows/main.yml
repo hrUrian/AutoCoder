@@ -13,5 +13,4 @@ jobs:
       - name: Make script file executable
         run: |
           chmod u+x ./scripts/script.sh
-          ./scripts/script.sh ${{ secrets.GITHUB_TOKEN }}
-#      -ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ./scripts/script.sh ${{ secrets.GITHUB_TOKEN }} 'hrUrian/AutoCoder' ${{ github.event.issue.number }} ${{ env.OPENAI_API_KEY }}
