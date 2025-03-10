@@ -20,7 +20,7 @@ jobs:
           name: autocoder-artifact
           path: autocoder-bot
       - name: Download the autocoder artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         id: download-artifact
         with:
           name: autocoder-artifact
