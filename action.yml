@@ -63,8 +63,6 @@ runs:
         title: "autocoder-branch-#${{ github.event.issue.number }}"
         labels: |
           autocoder-bot
-#      run: |
-#         The script that creates a pull request with the generated code goes here.
       shell: bash
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
