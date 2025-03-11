@@ -45,7 +45,8 @@ jobs:
           # git commit -a --allow-empty-message 
       - name: list artifact
         run: | 
-          mv -R ${{ steps.download-artifact.outputs.download-path }} ..
+          cp -R ${{ steps.download-artifact.outputs.download-path }} ..
+          rm -r ${{ steps.download-artifact.outputs.download-path }}
           # git commit -a --allow-empty-message 
           git diff main
           # ls -R ${{ steps.download-artifact.outputs.download-path }}/../autocoder-artifact/
