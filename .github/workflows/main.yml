@@ -43,7 +43,7 @@ jobs:
           git status
           git add .
           git status -s
-          git commit --allow-empty-message
+          git commit -m "suggested changes from autocoder"
           git status
           git diff main
       # - name: list artifact
