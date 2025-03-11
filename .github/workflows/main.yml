@@ -10,10 +10,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: AutoCoder Composite Action
-        uses: hrUrian/AutoCoder@v0.2.0-alpha.2
+        uses: hrUrian/AutoCoder@v0.2.0-alpha.3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
           LABEL: 'autocoder'
 
 #jobs:
