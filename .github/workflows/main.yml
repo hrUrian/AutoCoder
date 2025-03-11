@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: AutoCoder Composite Action
-        uses: hrUrian/AutoCoder@v0.1.0-alpha
+        uses: hrUrian/AutoCoder@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
