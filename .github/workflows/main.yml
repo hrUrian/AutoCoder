@@ -12,8 +12,8 @@ jobs:
       - name: AutoCoder Composite Action
         uses: hrUrian/AutoCoder@v0.1.0-alpha
         with:
-          github_token: $\{{ secrets.GITHUB_TOKEN }}
-          openai_api_key: $\{{ secrets.OPENAI_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           issue_label: 'autocoder'
 
 #jobs:
