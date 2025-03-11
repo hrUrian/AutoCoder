@@ -36,8 +36,8 @@ runs:
       shell: bash
       env:
         LABEL: ${{ inputs.LABEL }}
-    # - name: Checkout Code
-    #   uses: actions/checkout@v4
+    - name: Checkout Code
+      uses: actions/checkout@v4
     # - name: Generate Code from Issue
     #   run: |
     #     chmod +x ./scripts/script.sh
