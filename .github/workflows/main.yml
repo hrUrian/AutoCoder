@@ -41,7 +41,8 @@ jobs:
           rm -r ${{ steps.download-artifact.outputs.download-path }}
           rm -r autocoder-bot
           git status
-          git add * 
+          git add .
+          git status -s
           git commit --allow-empty-message
           git status
           git diff main
