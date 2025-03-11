@@ -36,33 +36,33 @@ runs:
       shell: bash
       env:
         LABEL: ${{ inputs.LABEL }}
-    - name: Checkout Code
-      uses: actions/checkout@v4
-    - name: Generate Code from Issue
-      run: |
-        chmod +x ./scripts/script.sh
-        ./scripts/script.sh ${{ env.GITHUB_TOKEN }} 'hrUrian/AutoCoder' ${{ inputs.issue_number }} ${{ env.OPENAI_API_KEY }}
-      shell: bash
-      env:
-        GITHUB_TOKEN: ${{ inputs.github_token }}
-        OPENAI_API_KEY: ${{ inputs.openai_api_key }}
-    - name: Git config
-      run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "autocoder-bot"
-        git add .
-        git commit -m "autocoder-bot-issue"
-      shell: bash
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v7
-      with:
-        base: main
-        branch: "autocoder-branch-${{ github.event.issue.number }}"
-        committer: autocoder-bot <actions@github.com>
-        author: autocoder-bot <actions@github.com>
-        title: "autocoder-branch-#${{ github.event.issue.number }}"
-        labels: |
-          autocoder-bot
-      env:
-        GITHUB_TOKEN: ${{ inputs.github_token }}
+    # - name: Checkout Code
+    #   uses: actions/checkout@v4
+    # - name: Generate Code from Issue
+    #   run: |
+    #     chmod +x ./scripts/script.sh
+    #     ./scripts/script.sh ${{ env.GITHUB_TOKEN }} 'hrUrian/AutoCoder' ${{ inputs.issue_number }} ${{ env.OPENAI_API_KEY }}
+    #   shell: bash
+    #   env:
+    #     GITHUB_TOKEN: ${{ inputs.github_token }}
+    #     OPENAI_API_KEY: ${{ inputs.openai_api_key }}
+    # - name: Git config
+    #   run: |
+    #     git config --local user.email "actions@github.com"
+    #     git config --local user.name "autocoder-bot"
+    #     git add .
+    #     git commit -m "autocoder-bot-issue"
+    #   shell: bash
+    # - name: Create Pull Request
+    #   uses: peter-evans/create-pull-request@v7
+    #   with:
+    #     base: main
+    #     branch: "autocoder-branch-${{ github.event.issue.number }}"
+    #     committer: autocoder-bot <actions@github.com>
+    #     author: autocoder-bot <actions@github.com>
+    #     title: "autocoder-branch-#${{ github.event.issue.number }}"
+    #     labels: |
+    #       autocoder-bot
+    #   env:
+    #     GITHUB_TOKEN: ${{ inputs.github_token }}
     # Add additional steps as necessary, replicating the logic from your original workflow.
