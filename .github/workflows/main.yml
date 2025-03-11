@@ -41,7 +41,7 @@ jobs:
           rm -r ${{ steps.download-artifact.outputs.download-path }}
           rm -r autocoder-bot
           git status
-          git commit -a --allow-empty-message 
+          git add -A && git commit --allow-empty-message
           git status
           git diff main
       # - name: list artifact
