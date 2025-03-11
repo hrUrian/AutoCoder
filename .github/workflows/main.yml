@@ -30,11 +30,12 @@ jobs:
       - name: checkout branch
         run: | 
           git checkout -b "autocoder-branch-${{ github.event.issue.number }}"
+          git status
       - name: commit changes
         run: |
-          cp -R ${{ steps.download-artifact.outputs.download-path }} .
+          # cp -R ${{ steps.download-artifact.outputs.download-path }} .
           git diff
-          git commit -a --allow-empty-message 
+          # git commit -a --allow-empty-message 
       # - name: list artifact
         # run: | 
           # ls -R ${{ steps.download-artifact.outputs.download-path }}/../autocoder-artifact/
