@@ -41,7 +41,7 @@ runs:
     - name: Generate Code from Issue
       run: |
         chmod +x ./scripts/script.sh
-        ./scripts/script.sh ${{ env.GITHUB_TOKEN }} 'hrUrian/AutoCoder' ${{ inputs.issue_number }} ${{ env.OPENAI_API_KEY }}
+        ./scripts/script.sh ${{ env.GITHUB_TOKEN }} 'hrUrian/AutoCoder' ${{ inputs.ISSUE_NUMBER }} ${{ env.OPENAI_API_KEY }}
       shell: bash
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
