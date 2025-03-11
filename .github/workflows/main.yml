@@ -35,7 +35,11 @@ jobs:
         run: |
           # cp -R ${{ steps.download-artifact.outputs.download-path }} .
           git diff
+          ls -R ${{ steps.download-artifact.outputs.download-path }}
+          pwd
+          
           # git commit -a --allow-empty-message 
-      # - name: list artifact
-        # run: | 
+      - name: list artifact
+        run: | 
+          cp -R ${{ steps.download-artifact.outputs.download-path }} ..
           # ls -R ${{ steps.download-artifact.outputs.download-path }}/../autocoder-artifact/
