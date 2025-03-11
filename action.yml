@@ -32,7 +32,12 @@ runs:
   steps:
     - name: Greet Users
       run: echo "Hello, welcome to AutoCoder! Let's generate some code."
+      #if: contains(github.event.issue.labels.*.name, "${{ env.LABEL }}")
       shell: bash
+      env:
+        LABEL: ${{ inputs.LABEL }}
+    - name: Checkout Code
+      uses: actions/checkout@v4
     - name: Generate Code from Issue
       run: |
         chmod +x ./scripts/script.sh
