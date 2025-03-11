@@ -49,7 +49,7 @@ jobs:
         with:
           base: main
           branch: "autocoder-branch-${{ github.event.issue.number }}"
-          author: "autocoder-bot"
-          committer: autocoder-bot <actions@github.com>
+          author: autocoder-bot
+          committer: "autocoder-bot <actions@github.com>"
           labels: |
             autocoder-bot
