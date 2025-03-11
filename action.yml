@@ -46,13 +46,13 @@ runs:
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         OPENAI_API_KEY: ${{ inputs.OPENAI_API_KEY }}
-    # - name: Git config
-    #   run: |
-    #     git config --local user.email "actions@github.com"
-    #     git config --local user.name "autocoder-bot"
-    #     git add .
-    #     git commit -m "autocoder-bot-issue"
-    #   shell: bash
+    - name: Git config
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "autocoder-bot"
+        git add .
+        git commit -m "autocoder-bot-issue"
+      shell: bash
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v7
       with:
