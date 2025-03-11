@@ -39,11 +39,11 @@ jobs:
         run: |
           cp -R ${{ steps.download-artifact.outputs.download-path }}/* .
           rm -r ${{ steps.download-artifact.outputs.download-path }}
-          # pwd
-          ls -a
+          rm -r autocoder-bot
           git status
-          
-          # git commit -a --allow-empty-message 
+          git commit -a --allow-empty-message 
+          git status
+          git diff main
       # - name: list artifact
         # run: | 
           # cp -R ${{ steps.download-artifact.outputs.download-path }} ..
