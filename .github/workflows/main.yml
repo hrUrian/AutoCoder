@@ -37,9 +37,11 @@ jobs:
           git config --global user.name "autocoder-bot"
       - name: commit changes
         run: |
-          ls -R ${{ steps.download-artifact.outputs.download-path }}
-          pwd
+          cp -R ${{ steps.download-artifact.outputs.download-path }}/* .
+          rm -r ${{ steps.download-artifact.outputs.download-path }}
+          # pwd
           ls -a
+          git status
           
           # git commit -a --allow-empty-message 
       # - name: list artifact
