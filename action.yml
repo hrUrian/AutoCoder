@@ -44,8 +44,8 @@ runs:
         ./scripts/script.sh ${{ env.GITHUB_TOKEN }} 'hrUrian/AutoCoder' ${{ inputs.issue_number }} ${{ env.OPENAI_API_KEY }}
       shell: bash
       env:
-        GITHUB_TOKEN: ${{ inputs.github_token }}
-        OPENAI_API_KEY: ${{ inputs.openai_api_key }}
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        OPENAI_API_KEY: ${{ inputs.OPENAI_API_KEY }}
     # - name: Git config
     #   run: |
     #     git config --local user.email "actions@github.com"
