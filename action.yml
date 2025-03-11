@@ -38,14 +38,14 @@ runs:
         LABEL: ${{ inputs.LABEL }}
     - name: Checkout Code
       uses: actions/checkout@v4
-    # - name: Generate Code from Issue
-    #   run: |
-    #     chmod +x ./scripts/script.sh
-    #     ./scripts/script.sh ${{ env.GITHUB_TOKEN }} 'hrUrian/AutoCoder' ${{ inputs.issue_number }} ${{ env.OPENAI_API_KEY }}
-    #   shell: bash
-    #   env:
-    #     GITHUB_TOKEN: ${{ inputs.github_token }}
-    #     OPENAI_API_KEY: ${{ inputs.openai_api_key }}
+    - name: Generate Code from Issue
+      run: |
+        chmod +x ./scripts/script.sh
+        ./scripts/script.sh ${{ env.GITHUB_TOKEN }} 'hrUrian/AutoCoder' ${{ inputs.issue_number }} ${{ env.OPENAI_API_KEY }}
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+        OPENAI_API_KEY: ${{ inputs.openai_api_key }}
     # - name: Git config
     #   run: |
     #     git config --local user.email "actions@github.com"
